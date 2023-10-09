@@ -51,8 +51,8 @@ function setConstructors() {
     var check1_c = document.createElement("div");
     var inp4 = document.createElement("input");
     var lab4 = document.createElement("label");
-    var inp5 = document.createElement("input");
     var check2_c = document.createElement("div");
+    var inp5 = document.createElement("input");
     var lab5 = document.createElement("label");
 
     cons0 = document.createElement("div");
@@ -66,7 +66,9 @@ function setConstructors() {
     cons1.className = "row row-cols-auto my-1";
 
     //+++++
+
     rad1_c.className = "col-12";
+
 
     inp1.type = "radio";
     inp1.name = "option_1";
@@ -226,8 +228,8 @@ function onSelectionClick(sel_opt) {
         }
 
         it_input.addEventListener("keydown", function (e) {
-            if ((["1","2","3","4","5","6","7","8","9","0"])
-                .indexOf(e.key) === -1) {
+            if (!(["1","2","3","4","5","6","7","8","9","0"]
+                  .indexOf(e.key) !== -1)) {
                 if (e.key !== "Backspace" && e.key !== "Delete") {
                     e.preventDefault();
                 }
@@ -298,3 +300,4 @@ function onRadioClick(butt) {
     prop_input = butt.value;
     setMesInt(form_input, prop_input, add_input);
 }
+
